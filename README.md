@@ -12,8 +12,8 @@ The dataset consists of video files categorized into normal and anomalous events
 Anomalous events are further divided into specific types such as Abuse, Arson, Assault, etc., while normal events are grouped under Normal categories.
 Data is split into training and testing sets, ensuring a balanced representation of all event types.
 ## Preprocessing
-Video frames are taken at an interval of 7 , and the anomaly is already tagged by anomaly frame beginning untill anomaly frame end.
-Preprocessed data is then prepared for model input, including the application of data augmentation techniques for training robustness.
+Video frames are taken at an interval of 7, resulting in 50 frames per video. each frame is normalized and converted from BGR2RGB using CV2 library.The anomaly videos are already tagged by anomaly frame beginning untill anomaly frame end which helps the model learn exactly the features he needs to detect anomalous events.
+The preprocessed data is then prepared for model input, including the application of data augmentation techniques for training robustness.
 ## Model Architecture
 An I3D Convnet pretrained model is employed and the model architecture includes fully connected layers with Relu as an activation function and BatchNormalization and Dropout serving as regularization techniques. The output layer consists of a single neuron with a sigmoid activation function for binary classification.
 ## Training and Evaluation
